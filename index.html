@@ -1,45 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário de Perfil</title>
+    <title>Perfil com Upload & Tema Dark</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 dark:bg-gray-900 transition-all">
 
-<div class="max-w-md mx-auto mt-16 bg-white shadow-lg rounded-lg p-8">
-    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Perfil do Usuário</h2>
+<!-- Botão tema -->
+<div class="w-full flex justify-end p-4">
+    <button id="toggleTheme" 
+        class="px-4 py-2 rounded-lg bg-gray-800 text-white dark:bg-yellow-400 dark:text-black">
+        Alternar Tema
+    </button>
+</div>
+
+<div class="max-w-md mx-auto mt-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8">
+    
+    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
+        Perfil do Usuário
+    </h2>
+
+    <!-- FOTO -->
+    <div class="flex flex-col items-center mb-6">
+        <img id="previewImg" 
+             src="https://via.placeholder.com/150"
+             class="w-32 h-32 rounded-full object-cover border-2 border-gray-300 dark:border-gray-600">
+        
+        <label class="mt-4 cursor-pointer font-medium text-blue-600 dark:text-blue-400">
+            Selecionar imagem
+            <input type="file" id="foto" accept="image/*" class="hidden">
+        </label>
+    </div>
 
     <form id="perfilForm" class="space-y-4">
-
         <div>
-            <label class="block font-medium text-gray-700">Nome completo</label>
+            <label class="block font-medium text-gray-700 dark:text-gray-300">Nome completo</label>
             <input type="text" id="nome"
-                class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500" 
+                class="mt-1 w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500" 
                 placeholder="Seu nome" required>
         </div>
 
         <div>
-            <label class="block font-medium text-gray-700">Email</label>
+            <label class="block font-medium text-gray-700 dark:text-gray-300">Email</label>
             <input type="email" id="email"
-                class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500" 
+                class="mt-1 w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500" 
                 placeholder="exemplo@teste.com" required>
         </div>
 
         <div>
-            <label class="block font-medium text-gray-700">Idade</label>
+            <label class="block font-medium text-gray-700 dark:text-gray-300">Idade</label>
             <input type="number" id="idade" min="1" max="120"
-                class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500" 
+                class="mt-1 w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500" 
                 required>
         </div>
 
         <div>
-            <label class="block font-medium text-gray-700">Biografia</label>
+            <label class="block font-medium text-gray-700 dark:text-gray-300">Biografia</label>
             <textarea id="bio" rows="4"
-                class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500"
+                class="mt-1 w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Fale um pouco sobre você..."></textarea>
         </div>
 
